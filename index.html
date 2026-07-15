@@ -7,26 +7,73 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
     <style>
+         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
-        body { background: #f9f9f9; color: #333; line-height: 1.6; }
-        header { background: #ff9933; padding: 15px; color: white; text-align: center; font-weight: 800; font-size: 22px; }
+        body { background: #f0f2f5; color: #333; line-height: 1.6; padding-bottom: 70px;   }
         
          
-        .hero-slider { width: 100%; height: 350px; overflow: hidden; position: relative; }
-        .hero-slider img { width: 100%; height: 100%; object-fit: cover; border-radius: 0 0 20px 20px; }
+        .main-header { 
+            background: linear-gradient(135deg, #000080 0%, #000040 100%); 
+            color: white; 
+            padding: 15px; 
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header-logo {
+            width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ff9933;
+            background: white;
+        }
+        .header-text h1 { margin: 0; font-size: 24px; font-weight: 800; color: #ff9933; }
+        .header-text h3 { margin: 0; font-size: 16px; font-weight: 600; opacity: 0.9; }
+        .header-text p { margin: 0; font-size: 14px; font-weight: 400; opacity: 0.8; }
+
+         
+        .desktop-nav { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: none; justify-content: center; gap: 20px; padding: 10px; }
+        .desktop-nav a { text-decoration: none; color: #000080; font-weight: 600; font-size: 16px; padding: 5px 10px; transition: 0.3s; }
+        .desktop-nav a:hover, .desktop-nav a.active { color: #ff9933; border-bottom: 2px solid #ff9933; }
         
+         
+        .mobile-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; display: flex; justify-content: space-around; padding: 10px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 100; }
+        .mobile-nav a { text-decoration: none; color: #666; font-size: 12px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-weight: 600; }
+        .mobile-nav a i { font-size: 20px; }
+        .mobile-nav a.active { color: #ff9933; }
+
+        @media(min-width: 768px) {
+            .desktop-nav { display: flex; }
+            .mobile-nav { display: none; }
+            body { padding-bottom: 0; }  
+        }
+
+         
         .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
         .section-title { font-size: 20px; color: #000080; border-left: 5px solid #ff9933; padding-left: 10px; margin: 25px 0 15px 0; font-weight: 800; }
         
          
-        .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
-        .work-card { background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; }
-        .work-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
-        .work-card h4 { margin: 10px 0; font-size: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        .work-meta { display: flex; justify-content: space-between; font-size: 12px; color: #777; }
+        .hero-slider { width: 100%; height: auto; aspect-ratio: 16/9; max-height: 400px; overflow: hidden; position: relative; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); background:#ddd; }
+        .hero-slider img { width: 100%; height: 100%; object-fit: cover; }
         
          
-        .news-item { background: white; padding: 12px; margin-bottom: 10px; border-radius: 8px; border-bottom: 2px solid #eee; display: flex; justify-content: space-between; align-items: center;}
+        .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .work-card { background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; }
+        .work-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .work-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; background:#eee; }
+        .work-card h4 { margin: 10px 0; font-size: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; color: #000080; }
+        .work-meta { display: flex; justify-content: space-between; font-size: 12px; color: #777; font-weight: 600; }
+        
+         
+        .news-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 4px solid #ff9933; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); font-weight: 600;}
+        
+         
+        .main-footer { text-align: center; padding: 20px; font-size: 14px; color: #666; margin-top: 30px; border-top: 1px solid #ddd; background: #fff;}
+        .main-footer a { color: #ff9933; text-decoration: none; font-weight: bold; }
         
          
         .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); display:none; justify-content:center; align-items:center; z-index:9999; }
@@ -35,14 +82,30 @@
 </head>
 <body>
 
-<header>सतीश उपळकर </header>
 
-<div class="hero-slider">
-    
-    <img id="mainSliderImg" src="" alt="Slider">
-</div>
+<header class="main-header">
+    <div class="header-content">
+                    <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784021551109.webp" alt="Logo" class="header-logo">
+                <div class="header-text">
+            <h1>सतीश उपळकर </h1>
+                                </div>
+    </div>
+</header>
+
+<nav class="desktop-nav">
+    <a href="index.html" class="active"><i class="fas fa-home"></i> मुख्य पान</a>
+    <a href="about.html"><i class="fas fa-user"></i> राजकीय प्रवास</a>
+    <a href="vikas-kame.html"><i class="fas fa-road"></i> विकासकामे</a>
+    <a href="samajik.html"><i class="fas fa-users"></i> सामाजिक कार्ये</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> गॅलरी</a>
+    <a href="contact.html"><i class="fas fa-address-book"></i> संपर्क</a>
+</nav>
 
 <div class="container">
+    <div class="hero-slider" id="sliderContainer">
+        <img src="https://via.placeholder.com/1000x500?text=Welcome" alt="Slider">
+    </div>
+
     <h2 class="section-title">ताज्या बातम्या व इव्हेंट्स</h2>
     <div id="newsContainer"></div>
     
@@ -50,36 +113,78 @@
     <div class="works-grid" id="worksContainer"></div>
 </div>
 
+<nav class="mobile-nav">
+    <a href="index.html" class="active"><i class="fas fa-home"></i><span>होम</span></a>
+    <a href="about.html"><i class="fas fa-user"></i><span>प्रवास</span></a>
+    <a href="vikas-kame.html"><i class="fas fa-road"></i><span>विकासकामे</span></a>
+    <a href="gallery.html"><i class="fas fa-images"></i><span>गॅलरी</span></a>
+    <a href="contact.html"><i class="fas fa-phone-alt"></i><span>संपर्क</span></a>
+</nav>
+
+<footer class="main-footer">
+    &copy; 2026 सतीश उपळकर . All Rights Reserved.<br>
+    Love made <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+</footer>
 
 <div class="modal-overlay" id="popup">
     <div class="modal-content">
-        <button onclick="document.getElementById('popup').style.display='none'" style="float:right; border:none; background:none; font-size:20px;">&times;</button>
-        <h2 id="modalTitle"></h2>
-        <div id="modalBody"></div>
+        <button onclick="document.getElementById('popup').style.display='none'" style="float:right; border:none; background:none; font-size:24px; cursor:pointer; color:#dc3545;">&times;</button>
+        <h2 id="modalTitle" style="color:#000080; margin-bottom:10px; padding-right:20px;"></h2>
+        <div id="modalBody" style="line-height:1.6;"></div>
     </div>
 </div>
 
 <script>
     const allWorks = [{"Work_ID":"work-1784111936203","Date":"2026-07-15","Category":"विकासकामे","Title":"मध्ये नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"पूर्ण झालेले काम","Fund":"40877","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784111928664.webp\"]","YT_Link":"","Description":"<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Multiple image upload साठी select केल्यास पहिल्या फक्त image चे लोकल stoarage thumbnail दिसते. बाकीच्या इमेज ते broken image स्वरूपात thumbnail दिसते.</span></p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Info details मध्ये social media links जोडण्यासाठी (fb, instagram, yt, twitter) option ठेवा.</span></p>","DB_Status":"Active","rowIndex":2},{"Work_ID":"work-1784022650212","Date":"2026-07-14","Category":"विकासकामे","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"राधानगरी","Status_Filter":"पूर्ण झालेले काम","Fund":"450000","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022633792.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022624630.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":3},{"Work_ID":"work-1784022576007","Date":"2026-07-14","Category":"मंत्री निर्णय","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022552545.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p><p><br></p><p>वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:</p>","DB_Status":"Active","rowIndex":4},{"Work_ID":"work-1784022505343","Date":"2026-07-14","Category":"सामाजिक कार्ये","Title":"आरोग्य वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022476613.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":5},{"Work_ID":"work-1784022412393","Date":"2026-07-14","Category":"गॅलरी","Title":"","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022403972.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022367708.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022359766.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":6},{"Work_ID":"work-1784022327033","Date":"2026-07-20","Category":"बातम्या","Title":"आरोग्य शिबिर","Bhag":"राधानगरी","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022320937.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":7},{"Work_ID":"work-1784022248400","Date":"2026-07-14","Category":"बातम्या","Title":"रक्तदान शिबिर","Bhag":"आजरा","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":8}];
+    const infoDataObj = {"hero_slider":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784021957737.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784021951067.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784021923965.webp\"]","about_us":"{\"title\":\"राजकीय प्रवास\",\"description\":\"<p>Prakash Abitkar was born on June 30, 1974 in Gargoti Bhudargad area of Kolhapur , Maharashtra. He was a laborer's son who rose through grass root politics. He completed his education from Shivaji University Kolhapur earning a BA honors degree in 1995. <a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-3\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[3]</sup></a></p><p><br></p><p>Political Career</p><p>Abitkar began his political career at a very young age when he was elected as an independent member of Gargoti Panchayat Samiti (Bhudargad) and served as its Deputy Chairperson (Upasabhapati) around 1997. From 2002 to 2007 he served as a member of the Kolhapur Zilla Parishad and its Standing Committee.<a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-:2-4\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[4]</sup></a></p><p>He joined Shiv Sena and contested the 2014 Maharashtra Legislative Assembly elections from Radhanagari constituency. He defeated the incumbent <a href=\\\"https://en.wikipedia.org/wiki/Krishnarao_Patil\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\">Krishnarao Patil</a> with a massive margin of over 40,000 votes marking a strong debut. <a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-:0-1\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[1]</sup></a></p>\"}","contact_us":"{\"offices\":[{\"title\":\"घर पत्ता \",\"address\":\"आनंद निवास , गारगोटी \\nकोल्हापूर \",\"p1\":\"07498663848\",\"p2\":\"07498663848\",\"p3\":\"\",\"wa\":\"7498663848\",\"email\":\"vedchitragroups@gmail.com\"},{\"title\":\"आजरा संपर्क ऑफिस \",\"address\":\"मेन रोड , आजरा \",\"p1\":\"07498663848\",\"p2\":\"\",\"p3\":\"\",\"wa\":\"7498663848\",\"email\":\"vedchitragroups@gmail.com\"}],\"name\":\"PA\",\"constituency\":\"Radhanagari\",\"designation\":\"आमदार \"}"};
     
     function render() {
         
+        let sliderImg = document.querySelector('#sliderContainer img');
+        try {
+            if(infoDataObj.hero_slider) {
+                let photos = JSON.parse(infoDataObj.hero_slider);
+                if(photos.length > 0) {
+                    sliderImg.src = photos[0];
+                }
+            }
+        } catch(e) {}
+
+        
         let newsHtml = '';
-        allWorks.filter(w => w.Category === 'बातम्या').slice(0, 5).forEach(n => {
-            newsHtml += `<div class="news-item"><span>${n.Title}</span><small>${n.Date.split('T')[0]}</small></div>`;
-        });
+        let newsList = allWorks.filter(w => w.Category === 'बातम्या').slice(0, 5);
+        if(newsList.length > 0) {
+            newsList.forEach(n => {
+                newsHtml += `<div class="news-item"><span>${n.Title}</span><small style="color:#777;">${n.Date.split('T')[0]}</small></div>`;
+            });
+        } else {
+            newsHtml = '<p style="color:#666;">सध्या ताज्या बातम्या उपलब्ध नाहीत.</p>';
+        }
         document.getElementById('newsContainer').innerHTML = newsHtml;
         
-        // Render Works
+        // Render Works (Images Fix Applied Here)
         let worksHtml = '';
-        allWorks.filter(w => w.Category !== 'बातम्या' && w.Category !== 'गॅलरी').slice(0, 6).forEach(w => {
-            worksHtml += `
-            <div class="work-card" onclick="showPopup('${w.Work_ID}')">
-                <img src="${w.Cover_Image}">
-                <h4>${w.Title}</h4>
-                <div class="work-meta"><span>${w.Bhag || ''}</span><span>${w.Fund || ''}</span></div>
-            </div>`;
-        });
+        let worksListToDisplay = allWorks.filter(w => w.Category !== 'बातम्या' && w.Category !== 'गॅलरी').slice(0, 6);
+        
+        if(worksListToDisplay.length > 0) {
+            worksListToDisplay.forEach(w => {
+                // IMAGE FIX: Parsing w.Photos to get the first image
+                let displayImg = 'https:
+                try {
+                    let photos = JSON.parse(w.Photos || '[]');
+                    if(photos.length > 0) displayImg = photos[0];
+                } catch(e) {}
+
+                worksHtml += `
+                <div class="work-card" onclick="showPopup('${w.Work_ID}')">
+                    <img src="${displayImg}" alt="${w.Title}">
+                    <h4>${w.Title}</h4>
+                    <div class="work-meta"><span>${w.Bhag || 'इतर'}</span><span>${w.Status_Filter || ''}</span></div>
+                </div>`;
+            });
+        } else {
+            worksHtml = '<p style="color:#666; grid-column: 1/-1;">सध्या माहिती उपलब्ध नाही.</p>';
+        }
         document.getElementById('worksContainer').innerHTML = worksHtml;
     }
 
@@ -87,7 +192,13 @@
         let work = allWorks.find(w => w.Work_ID === id);
         if(!work) return;
         document.getElementById('modalTitle').innerText = work.Title;
-        document.getElementById('modalBody').innerHTML = work.Description + (work.Fund ? `<p><strong>निधी:</strong> ${work.Fund}</p>` : '');
+        
+        // Display description, funds, and youtube link in popup
+        let bodyHtml = work.Description || '';
+        if(work.Fund) bodyHtml += `<p style="margin-top:10px; background:#f8f9fa; padding:10px; border-radius:6px; border-left:3px solid #28a745;"><strong>निधी:</strong> ${work.Fund}</p>`;
+        if(work.YT_Link) bodyHtml += `<a href="${work.YT_Link}" target="_blank" style="display:block; margin-top:10px; color:white; background:#FF0000; padding:10px; text-align:center; border-radius:6px; text-decoration:none; font-weight:bold;"><i class="fab fa-youtube"></i> व्हिडिओ पहा</a>`;
+        
+        document.getElementById('modalBody').innerHTML = bodyHtml;
         document.getElementById('popup').style.display = 'flex';
     }
 
