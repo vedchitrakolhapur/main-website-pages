@@ -9,19 +9,26 @@
     <style>
          
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
-        body { background: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 70px; }
+        body { background: #f4f6f9; color: #333; line-height: 1.6; }
         
          
-        .main-header { background: linear-gradient(135deg, #E65100 0%, #BF360C 100%); color: white; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; z-index: 101; }
-        .header-content { display: flex; align-items: center; justify-content: space-between; max-width: 1000px; margin: 0 auto; width: 100%; }
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-logo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid white; background: white; }
-        .header-text h1 { margin: 0; font-size: 22px; font-weight: 800; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
-        .header-text h3 { margin: 0; font-size: 15px; font-weight: 600; opacity: 0.95; }
-        .header-text p { margin: 0; font-size: 13px; font-weight: 400; opacity: 0.9; }
+         
+         
+        .main-header { background: linear-gradient(135deg, #E65100 0%, #BF360C 100%); color: white; padding: 25px 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; z-index: 101; text-align: center; }
+        .header-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; max-width: 1000px; margin: 0 auto; }
+        
+         
+        .logo-wrapper { position: relative; display: inline-block; margin-bottom: 5px; }
+        .header-logo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 3px solid white; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .party-logo { position: absolute; bottom: -5px; right: -10px; width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid white; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+         
+        .header-text h1 { margin: 0; font-size: 26px; font-weight: 800; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); line-height: 1.2; }
+        .header-text h3 { margin: 0; font-size: 16px; font-weight: 600; opacity: 0.95; line-height: 1.2; }
+        .header-text p { margin: 0; font-size: 14px; font-weight: 400; opacity: 0.9; line-height: 1.2; }
 
          
-        .mobile-menu-btn { background: transparent; border: none; color: white; font-size: 26px; cursor: pointer; display: none; padding: 5px; }
+        .mobile-menu-btn { position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: white; font-size: 26px; cursor: pointer; display: none; padding: 5px; }
         
          
         .mobile-dropdown { display: none; background: white; flex-direction: column; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: absolute; top: 100%; left: 0; width: 100%; z-index: 100; border-top: 3px solid #E65100; }
@@ -39,38 +46,42 @@
         @media(max-width: 767px) { .mobile-menu-btn { display: block; } }
 
          
-        .section-wrapper { padding: 40px 15px; border-bottom: 1px solid #e0e0e0; }
-        .container { max-width: 900px; margin: 0 auto; }
+         
+         
+        .top-wrapper { padding: 0 15px; }
+        .top-section-container { max-width: 900px; margin: 0 auto 40px auto; background: white; border-radius: 0 0 16px 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); overflow: hidden; }
         
-         
-        .section-title { font-size: 24px; color: #000080; font-weight: 800; text-align: center; margin-bottom: 25px; position: relative; display: flex; justify-content: center; align-items: center; gap: 15px;}
-        .section-title i { color: #E65100; font-size: 28px; }
-        .section-title::before, .section-title::after { content: ""; height: 3px; width: 40px; background: #E65100; border-radius: 5px; display: inline-block; }
-
-         
-        .bg-minister { background-color: #f0f4ff; }  
-        .bg-vikas { background-color: #f0fff4; }     
-        .bg-samajik { background-color: #fff5eb; }   
-        .bg-news { background-color: #fffdf0; }      
-        .bg-social { background-color: #f9f9f9; }
-
-         
-        .slider-wrapper { position: relative; max-width: 900px; margin: 20px auto; height: 220px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: #ddd;}
+        .slider-wrapper { position: relative; width: 100%; height: 230px; background: #ddd; }
         .slider-img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease-in-out; }
         .slider-img.active { opacity: 1; }
         .slider-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
         .slider-dot { width: 10px; height: 10px; background: rgba(255,255,255,0.5); border-radius: 50%; cursor: pointer; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .slider-dot.active { background: white; transform: scale(1.3); }
-        @media(min-width: 768px) { .slider-wrapper { height: 400px; } }
+        @media(min-width: 768px) { .slider-wrapper { height: 420px; } }
 
-         
-        .about-box { background: white; max-width: 900px; margin: 0 auto 30px auto; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #E65100;}
-        .about-box p { font-size: 16px; color: #444; margin-bottom: 15px; }
+        .about-box { padding: 25px 20px; text-align: center; }
+        .about-box p { font-size: 16px; color: #444; margin-bottom: 20px; white-space: pre-wrap; }
         .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;}
-        .btn-theme { background: #E65100; color: white; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 2px solid #E65100;}
-        .btn-theme-outline { background: transparent; color: #E65100; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 2px solid #E65100;}
+        .btn-theme { background: #E65100; color: white; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 2px solid #E65100;}
+        .btn-theme-outline { background: transparent; color: #E65100; padding: 10px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; border: 2px solid #E65100;}
         .btn-theme:hover { background: #BF360C; border-color: #BF360C; color: white;}
         .btn-theme-outline:hover { background: #E65100; color: white; }
+
+         
+         
+         
+        .section-wrapper { padding: 40px 15px; border-bottom: 1px solid #e0e0e0; }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        .section-title { font-size: 24px; color: #000080; font-weight: 800; text-align: center; margin-bottom: 30px; position: relative; display: flex; justify-content: center; align-items: center; gap: 15px;}
+        .section-title i { color: #E65100; font-size: 28px; }
+        .section-title::before, .section-title::after { content: ""; height: 3px; width: 40px; background: #E65100; border-radius: 5px; display: inline-block; }
+
+        .bg-minister { background-color: #f0f4ff; }
+        .bg-vikas { background-color: #f0fff4; }
+        .bg-samajik { background-color: #fff5eb; }
+        .bg-news { background-color: #fffdf0; }
+        .bg-social { background-color: #f9f9f9; }
 
          
         .list-item { background: white; padding: 12px; border-radius: 12px; display: flex; gap: 15px; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.06); margin-bottom: 15px; cursor: pointer; transition: 0.2s; border: 1px solid #eee; }
@@ -83,7 +94,7 @@
         .list-meta { font-size: 13px; color: #666; font-weight: 600; display: flex; gap: 10px; flex-wrap: wrap;}
         .list-meta span { background: #f0f2f5; padding: 2px 8px; border-radius: 4px; }
         
-        .view-all-btn { display: block; text-align: center; background: #000080; color: white; font-weight: 700; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 20px; transition: 0.3s; max-width: 300px; margin-left: auto; margin-right: auto;}
+        .view-all-btn { display: block; text-align: center; background: #000080; color: white; font-weight: 700; padding: 12px; border-radius: 8px; text-decoration: none; margin-top: 25px; transition: 0.3s; max-width: 300px; margin-left: auto; margin-right: auto;}
         .view-all-btn:hover { background: #E65100; }
 
          
@@ -110,22 +121,22 @@
          
          
         body.no-scroll { overflow: hidden; }
-        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:9999; padding: 15px; backdrop-filter: blur(5px);}
+        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:9999; padding: 25px 10px 10px; backdrop-filter: blur(5px);}
         
          
-        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.95); border: none; width: 50px; height: 50px; border-radius: 50%; font-size: 22px; color: #E65100; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
-        .nav-arrow:hover { background: white; transform: translateY(-50%) scale(1.1); }
-        .nav-arrow:disabled { opacity: 0.4; cursor: not-allowed; transform: translateY(-50%); }
+        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.5); width: 50px; height: 50px; border-radius: 50%; font-size: 22px; color: white; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: 0.3s; backdrop-filter: blur(4px);}
+        .nav-arrow:hover { background: rgba(255,255,255,0.5); transform: translateY(-50%) scale(1.1); }
+        .nav-arrow:disabled { opacity: 0.2; cursor: not-allowed; transform: translateY(-50%); }
         .left-arrow { left: 10px; }
         .right-arrow { right: 10px; }
         @media(max-width: 768px) { .nav-arrow { width: 40px; height: 40px; font-size: 18px; } .left-arrow { left: 5px; } .right-arrow { right: 5px; } }
 
          
-        .modal-content { background: #f4f6f9; width: 100%; max-width: 650px; max-height: 90vh; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: popIn 0.3s; display: flex; flex-direction: column; }
+        .modal-content { background: #f4f6f9; width: 100%; max-width: 650px; max-height: 90vh; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: popIn 0.3s; display: flex; flex-direction: column; margin-top: 15px;}
         @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         
          
-        .modal-close-btn { position: absolute; top: -15px; right: -15px; width: 35px; height: 35px; background: #dc3545; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10001; border: 2px solid white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.4); font-size: 18px; transition: 0.2s; }
+        .modal-close-btn { position: absolute; top: -18px; right: 5px; width: 38px; height: 38px; background: #dc3545; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10001; border: 2px solid white; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.4); font-size: 18px; transition: 0.2s; }
         .modal-close-btn:hover { background: #c82333; transform: scale(1.1); }
 
          
@@ -140,7 +151,7 @@
         .modal-scroll-area::-webkit-scrollbar { display: none; }
         
         .modal-img-container img { width: 100%; padding: 5px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; object-fit: cover; }
-        .yt-iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .yt-iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: block; }
         .yt-iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     </style>
 </head>
@@ -149,15 +160,14 @@
 
 
 <header class="main-header">
+    <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
     <div class="header-content">
-        <div class="header-left">
-            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp" class="header-logo">            <div class="header-text">
-                <h1>सतीश उपळकर </h1>
-                <h3>महाराष्ट्र राज्य</h3>                <p>राधानगरी मतदारसंघ)</p>            </div>
-        </div>
-        <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        <div class="logo-wrapper">
+            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp" class="header-logo">            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784285748683_5621.webp" class="party-logo">        </div>
+        <div class="header-text">
+            <h1>सतीश उपळकर </h1>
+            <h3>महाराष्ट्र राज्य</h3>            <p>राधानगरी मतदारसंघ)</p>        </div>
     </div>
-    
     <div id="mobileDropdown" class="mobile-dropdown">
         <a href="index.html"><i class="fas fa-home"></i> मुख्य पान</a>
         <a href="minister.html"><i class="fas fa-briefcase"></i> मंत्री निर्णय</a>
@@ -168,7 +178,6 @@
         <a href="contact.html"><i class="fas fa-address-book"></i> संपर्क</a>
     </div>
 </header>
-
 
 <nav class="desktop-nav">
     <a href="index.html" class="active"><i class="fas fa-home"></i> मुख्य पान</a>
@@ -181,18 +190,23 @@
 </nav>
 
 
-<div class="slider-wrapper" id="heroSliderWrapper" style="display:none;">
-    <div id="heroSlider"></div>
-    <div class="slider-dots" id="sliderDots"></div>
-</div>
+<div class="top-wrapper">
+    <div class="top-section-container">
+        
+        <div class="slider-wrapper" id="heroSliderWrapper" style="display:none;">
+            <div id="heroSlider"></div>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
 
-
-<div class="about-box">
-    <p>सतीश उपळकर  यांचे पोर्टल
+        <div class="about-box">
+            <p>सतीश उपळकर  यांचे पोर्टल
 बसाईटवरील थोडक्यात माहिती - ओळ बदलण्यासाठी Enter</p>
-    <div class="btn-group">
-        <a href="about.html" class="btn-theme"><i class="fas fa-user-tie"></i> अधिक माहिती (About)</a>
-        <a href="contact.html" class="btn-theme-outline"><i class="fas fa-phone-alt"></i> संपर्क साधा</a>
+            <div class="btn-group">
+                <a href="about.html" class="btn-theme"><i class="fas fa-user-tie"></i> अधिक माहिती (About)</a>
+                <a href="contact.html" class="btn-theme-outline"><i class="fas fa-phone-alt"></i> संपर्क साधा</a>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -270,7 +284,6 @@
     <div class="modal-content">
         <button class="modal-close-btn" onclick="closePopup()"><i class="fas fa-times"></i></button>
         
-        
         <div class="modal-header-fixed">
             <div class="modal-header-left">
                 <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp">                <div>
@@ -281,7 +294,6 @@
             <button class="modal-share-icon" onclick="shareWork()" title="शेअर करा"><i class="fas fa-share-alt"></i></button>
         </div>
 
-        
         <div class="modal-scroll-area" id="modalScrollableArea">
             <h2 id="modalTitle" style="color:#333; margin-bottom:15px; font-size:20px; line-height:1.4;"></h2>
             <div id="modalMeta" style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; font-size:13px; font-weight:bold; color:#666;"></div>
@@ -293,7 +305,7 @@
 </div>
 
 <script>
-    const allWorks = [{"Work_ID":"work-1784200040767","Date":"2026-07-16","Category":"मंत्री निर्णय","Title":"प्रिव्हियस केल्यावर नेहमी टायटलपासून (वरती) वाचण्यास सुरु होईल.","Bhag":"","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":2},{"Work_ID":"work-1784200005260","Date":"2026-07-16","Category":"विकासकामे","Title":"नेक्स्ट पॉपअप नेहमी टायटलपासून (वरती) वाचण्यास सुरु होईल.","Bhag":"आजरा","Status_Filter":"चालू काम","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":3},{"Work_ID":"work-1784181191615","Date":"2026-07-16","Category":"सामाजिक कार्ये","Title":"रक्तदान शिबिर आयोजित  मध्ये नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181184794_7188.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181169176_4222.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":4},{"Work_ID":"work-1784111936203","Date":"2026-07-15","Category":"विकासकामे","Title":"नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"पूर्ण झालेले काम","Fund":"40877","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181101142_3103.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181093812_7765.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181084971_5210.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784111928664.webp\"]","YT_Link":"","Description":"<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Multiple image upload साठी select केल्यास पहिल्या फक्त image चे लोकल stoarage thumbnail दिसते. बाकीच्या इमेज ते broken image स्वरूपात thumbnail दिसते.</span></p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Info details मध्ये social media links जोडण्यासाठी (fb, instagram, yt, twitter) option ठेवा.</span></p>","DB_Status":"Active","rowIndex":5},{"Work_ID":"work-1784022650212","Date":"2026-07-14","Category":"विकासकामे","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"राधानगरी","Status_Filter":"पूर्ण झालेले काम","Fund":"450000","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022633792.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022624630.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":6},{"Work_ID":"work-1784022576007","Date":"2026-07-14","Category":"मंत्री निर्णय","Title":"वेबसाईट करण्यासाठी तुम्ही आता खालील अंतिम पावले उचलणे आवश्यक आहे:","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181971549_7218.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210522_9969.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210061_6136.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177138856_7341.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022552545.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p><p><br></p><p>वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:</p>","DB_Status":"Active","rowIndex":7},{"Work_ID":"work-1784022505343","Date":"2026-07-14","Category":"सामाजिक कार्ये","Title":"आरोग्य वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022476613.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":8},{"Work_ID":"work-1784022412393","Date":"2026-07-14","Category":"गॅलरी","Title":"","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022403972.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022367708.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022359766.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":9},{"Work_ID":"work-1784022327033","Date":"2026-07-20","Category":"बातम्या","Title":"आरोग्य शिबिर","Bhag":"राधानगरी","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022320937.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":10},{"Work_ID":"work-1784022248400","Date":"2026-07-14","Category":"बातम्या","Title":"रक्तदान शिबिर","Bhag":"आजरा","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":11}];
+    const allWorks = [{"Work_ID":"work-1784200040767","Date":"2026-07-16","Category":"मंत्री निर्णय","Title":"प्रिव्हियस केल्यावर नेहमी टायटलपासून (वरती) वाचण्यास सुरु होईल.","Bhag":"","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":2},{"Work_ID":"work-1784200005260","Date":"2026-07-16","Category":"विकासकामे","Title":"नेक्स्ट पॉपअप नेहमी टायटलपासून चण्यास सुरु होईल.","Bhag":"आजरा","Status_Filter":"चालू काम","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":3},{"Work_ID":"work-1784181191615","Date":"2026-07-16","Category":"सामाजिक कार्ये","Title":"रक्तदान शिबिर आयोजित  मध्ये नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181184794_7188.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181169176_4222.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":4},{"Work_ID":"work-1784111936203","Date":"2026-07-15","Category":"विकासकामे","Title":"नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"पूर्ण झालेले काम","Fund":"40877","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181101142_3103.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181093812_7765.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181084971_5210.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784111928664.webp\"]","YT_Link":"","Description":"<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Multiple image upload साठी select केल्यास पहिल्या फक्त image चे लोकल stoarage thumbnail दिसते. बाकीच्या इमेज ते broken image स्वरूपात thumbnail दिसते.</span></p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Info details मध्ये social media links जोडण्यासाठी (fb, instagram, yt, twitter) option ठेवा.</span></p>","DB_Status":"Active","rowIndex":5},{"Work_ID":"work-1784022650212","Date":"2026-07-14","Category":"विकासकामे","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"राधानगरी","Status_Filter":"पूर्ण झालेले काम","Fund":"450000","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022633792.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022624630.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":6},{"Work_ID":"work-1784022576007","Date":"2026-07-14","Category":"मंत्री निर्णय","Title":"वेबसाईट करण्यासाठी तुम्ही आता खालील अंतिम पावले उचलणे आवश्यक आहे:","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181971549_7218.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210522_9969.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210061_6136.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177138856_7341.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022552545.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p><p><br></p><p>वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:</p>","DB_Status":"Active","rowIndex":7},{"Work_ID":"work-1784022505343","Date":"2026-07-14","Category":"सामाजिक कार्ये","Title":"आरोग्य वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022476613.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":8},{"Work_ID":"work-1784022412393","Date":"2026-07-14","Category":"गॅलरी","Title":"","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022403972.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022367708.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022359766.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":9},{"Work_ID":"work-1784022327033","Date":"2026-07-20","Category":"बातम्या","Title":"आरोग्य शिबिर","Bhag":"राधानगरी","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022320937.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":10},{"Work_ID":"work-1784022248400","Date":"2026-07-14","Category":"बातम्या","Title":"रक्तदान शिबिर","Bhag":"आजरा","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":11}];
     const infoDataObj = {"hero_slider":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784285669601_9033.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784182782775_9105.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784115893766_8228.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784115885425_9003.webp\"]","about_us":"{\"title\":\"राजकीय प्रवास\",\"description\":\"<p>Prakash Abitkar was born on June 30, 1974 in Gargoti Bhudargad area of Kolhapur , Maharashtra. He was a laborer's son who rose through grass root politics. He completed his education from Shivaji University Kolhapur earning a BA honors degree in 1995. <a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-3\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[3]</sup></a></p><p><br></p><p>Political Career</p><p>Abitkar began his political career at a very young age when he was elected as an independent member of Gargoti Panchayat Samiti (Bhudargad) and served as its Deputy Chairperson (Upasabhapati) around 1997. From 2002 to 2007 he served as a member of the Kolhapur Zilla Parishad and its Standing Committee.<a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-:2-4\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[4]</sup></a></p><p>He joined Shiv Sena and contested the 2014 Maharashtra Legislative Assembly elections from Radhanagari constituency. He defeated the incumbent <a href=\\\"https://en.wikipedia.org/wiki/Krishnarao_Patil\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\">Krishnarao Patil</a> with a massive margin of over 40,000 votes marking a strong debut. <a href=\\\"https://en.wikipedia.org/wiki/Prakashrao_Abitkar#cite_note-:0-1\\\" target=\\\"_blank\\\" style=\\\"background-color: initial; color: rgb(51, 102, 204);\\\"><sup>[1]</sup></a></p>\"}","contact_us":"{\"offices\":[{\"title\":\"घर पत्ता \",\"address\":\"आनंद निवास , गारगोटी \\nकोल्हापूर \",\"p1\":\"07498663848\",\"p2\":\"07498663848\",\"p3\":\"\",\"wa\":\"7498663848\",\"email\":\"vedchitragroups@gmail.com\"},{\"title\":\"आजरा संपर्क ऑफिस \",\"address\":\"मेन रोड , आजरा \",\"p1\":\"07498663848\",\"p2\":\"\",\"p3\":\"\",\"wa\":\"7498663848\",\"email\":\"vedchitragroups@gmail.com\"}],\"name\":\"PA\",\"constituency\":\"Radhanagari\",\"designation\":\"आमदार \"}"};
     
     allWorks.sort((a, b) => new Date(b.Date) - new Date(a.Date));
@@ -302,7 +314,6 @@
         document.getElementById('mobileDropdown').classList.toggle('open');
     }
 
-    
     function getThumb(work) {
         try { let p = JSON.parse(work.Photos || '[]'); if(p.length > 0) return p[0]; } catch(e){}
         return null; 
@@ -313,10 +324,8 @@
     
     function getEmbedUrl(url) {
         if(!url) return '';
-        let vid = '';
-        if(url.includes('youtu.be/')) vid = url.split('youtu.be/')[1].split('?')[0];
-        else if(url.includes('youtube.com/watch')) vid = new URL(url).searchParams.get('v');
-        return vid ? "https:" + "//www.youtube.com/embed/" + vid + "?autoplay=1&mute=0" : '';
+        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
+        return (match && match[1]) ? "https:" + "//www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
     }
 
     function renderPage() {
@@ -349,9 +358,9 @@
             }
         }
 
-        // 2. Render Lists (Smart Missing Image & YT handling)
+        // Render Lists
         function createListHTML(items, showFund) {
-            if(items.length === 0) return '<p style="color:#777;">माहिती उपलब्ध नाही.</p>';
+            if(items.length === 0) return '<p style="color:#777; text-align:center;">माहिती उपलब्ध नाही.</p>';
             let html = '';
             items.forEach(w => {
                 let meta = `<span><i class="far fa-calendar-alt"></i> ${formatDate(w.Date)}</span>`;
@@ -359,13 +368,11 @@
                 if(showFund && w.Fund) meta += `<span style="color:#28a745;"><i class="fas fa-rupee-sign"></i> ${w.Fund}</span>`;
                 
                 let thumb = getThumb(w);
-                let imgBlock = '';
-                let extraClass = '';
+                let imgBlock = ''; let extraClass = '';
 
                 if (thumb) {
                     imgBlock = `<img src="${thumb}" class="list-img">`;
                 } else if (w.YT_Link) {
-                    
                     extraClass = 'yt-special-item';
                     imgBlock = `<div class="list-img yt-placeholder"><i class="fab fa-youtube"></i></div>`;
                 }
@@ -392,13 +399,11 @@
         if(newsItems.length > 0) {
             newsItems.forEach(n => { nHtml += `<div class="news-item"><span>${n.Title}</span><small style="color:#777;"><i class="far fa-calendar-alt"></i> ${formatDate(n.Date)}</small></div>`; });
         } else {
-            nHtml = '<p style="color:#777;">सध्या ताज्या बातम्या उपलब्ध नाहीत.</p>';
+            nHtml = '<p style="color:#777; text-align:center;">सध्या ताज्या बातम्या उपलब्ध नाहीत.</p>';
         }
         document.getElementById('newsContainer').innerHTML = nHtml;
     }
 
-    
-    
     
     let currentPopupList = [];
     let currentPopupIndex = -1;
@@ -437,7 +442,6 @@
         if(w.Fund) metaHtml += `<span style="background:#d4edda; color:#155724; padding:4px 10px; border-radius:20px;"><i class="fas fa-rupee-sign"></i> निधी: ${w.Fund}</span>`;
         document.getElementById('modalMeta').innerHTML = metaHtml;
 
-        
         let ytHtml = '';
         let embed = getEmbedUrl(w.YT_Link);
         if(embed) {
@@ -456,7 +460,6 @@
 
         document.getElementById('prevBtn').disabled = (currentPopupIndex === 0);
         document.getElementById('nextBtn').disabled = (currentPopupIndex === currentPopupList.length - 1);
-        
         
         document.getElementById('modalScrollableArea').scrollTop = 0;
     }
