@@ -78,13 +78,11 @@
         .page-title::after, .page-title::before { content: ""; height: 3px; width: 40px; background: #E65100; border-radius: 5px; display: inline-block; }
 
          
-        .filter-section { background: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 1px solid #eef2f5;}
-        .filter-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
-        .filter-row:last-child { margin-bottom: 0; }
-        .filter-label { font-weight: 800; color: #000080; min-width: 60px; font-size: 15px; }
-        .filter-btn { background: #f0f2f5; border: 1px solid #ddd; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 700; color: #555; cursor: pointer; transition: 0.2s; white-space: nowrap; }
-        .filter-btn:hover { background: #e2e6ea; }
-        .filter-btn.active { background: #E65100; color: white; border-color: #E65100; box-shadow: 0 2px 8px rgba(230,81,0,0.3); }
+.filter-section { background: #fffbe6; padding: 15px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 1px solid #ffeeba; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between;}
+.filter-group { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 200px;}
+.filter-label { font-weight: 800; color: #E65100; font-size: 15px; white-space: nowrap;}
+.filter-select { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid #ffd8a8; background: white; font-family: 'Mukta', sans-serif; font-size: 15px; font-weight: 600; color: #333; outline: none; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.02);}
+.filter-select:focus { border-color: #E65100; }
 
          
         .list-item { background: white; padding: 12px; border-radius: 12px; display: flex; gap: 15px; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.06); margin-bottom: 15px; cursor: pointer; transition: 0.2s; border: 1px solid #eee; }
@@ -182,20 +180,24 @@
     
     
     <div class="filter-section">
-        <div class="filter-row">
-            <span class="filter-label"><i class="fas fa-map-marker-alt"></i> भाग:</span>
-            <button id="a0" class="filter-btn area-btn active" onclick="setAreaFilter('All', 'a0')">संपूर्ण मतदारसंघ</button>
-            <button id="a1" class="filter-btn area-btn" onclick="setAreaFilter('राधानगरी', 'a1')">राधानगरी</button>
-            <button id="a2" class="filter-btn area-btn" onclick="setAreaFilter('भुदरगड', 'a2')">भुदरगड</button>
-            <button id="a3" class="filter-btn area-btn" onclick="setAreaFilter('आजरा', 'a3')">आजरा</button>
+        <div class="filter-group">
+            <span class="filter-label"><i class="fas fa-map-marker-alt"></i> भाग निवडा:</span>
+            <select id="areaDropdown" class="filter-select" onchange="handleDropdownFilter()">
+                <option value="a0">संपूर्ण मतदारसंघ</option>
+                <option value="a1">राधानगरी</option>
+                <option value="a2">भुदरगड</option>
+                <option value="a3">आजरा</option>
+            </select>
         </div>
-        <div class="filter-row">
-            <span class="filter-label"><i class="fas fa-info-circle"></i> स्थिती:</span>
-            <button id="s0" class="filter-btn status-btn active" onclick="setStatusFilter('All', 's0')">सर्व कामे</button>
-            <button id="s1" class="filter-btn status-btn" onclick="setStatusFilter('पूर्ण झालेले काम', 's1')">पूर्ण झालेले काम</button>
-            <button id="s2" class="filter-btn status-btn" onclick="setStatusFilter('चालू काम', 's2')">चालू काम</button>
-            <button id="s3" class="filter-btn status-btn" onclick="setStatusFilter('मंजूर काम', 's3')">मंजूर काम</button>
-            <button id="s4" class="filter-btn status-btn" onclick="setStatusFilter('प्रस्तावित काम', 's4')">प्रस्तावित काम</button>
+        <div class="filter-group">
+            <span class="filter-label"><i class="fas fa-info-circle"></i> कामाची स्थिती:</span>
+            <select id="statusDropdown" class="filter-select" onchange="handleDropdownFilter()">
+                <option value="s0">सर्व कामे</option>
+                <option value="s1">पूर्ण झालेले काम</option>
+                <option value="s2">चालू काम</option>
+                <option value="s3">मंजूर काम</option>
+                <option value="s4">प्रस्तावित काम</option>
+            </select>
         </div>
     </div>
 
@@ -276,17 +278,26 @@
     }
 
     
-    window.setAreaFilter = function(area, btnId) {
-        currentArea = area;
-        document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
-        if(document.getElementById(btnId)) document.getElementById(btnId).classList.add('active');
-        runFilters();
-    };
+    const areaMap = { 'a1': 'राधानगरी', 'a2': 'भुदरगड', 'a3': 'आजरा', 'a0': 'All' };
+    const statusMap = { 's1': 'पूर्ण झालेले काम', 's2': 'चालू काम', 's3': 'मंजूर काम', 's4': 'प्रस्तावित काम', 's0': 'All' };
 
-    window.setStatusFilter = function(status, btnId) {
-        currentStatus = status;
-        document.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
-        if(document.getElementById(btnId)) document.getElementById(btnId).classList.add('active');
+    window.handleDropdownFilter = function() {
+        let selectedAreaId = document.getElementById('areaDropdown').value;
+        let selectedStatusId = document.getElementById('statusDropdown').value;
+
+        currentArea = areaMap[selectedAreaId];
+        currentStatus = statusMap[selectedStatusId];
+
+        
+        let newUrl = new URL(window.location);
+        if(selectedAreaId !== 'a0') newUrl.searchParams.set('area', selectedAreaId);
+        else newUrl.searchParams.delete('area');
+        
+        if(selectedStatusId !== 's0') newUrl.searchParams.set('status', selectedStatusId);
+        else newUrl.searchParams.delete('status');
+
+        window.history.pushState({}, '', newUrl);
+
         runFilters();
     };
 
@@ -449,7 +460,7 @@
     window.shareWork = function() {
         let w = filteredWorks[currentPopupIndex];
         let shareUrl = window.location.origin + window.location.pathname + "?work=" + w.Work_ID;
-        let shareText = "आमदार साहेब - " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
+        let shareText = "👉 " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
         
         if (navigator.share) {
             navigator.share({ title: w.Title, text: shareText, url: shareUrl }).catch(err => console.log(err));
@@ -460,30 +471,22 @@
     };
 
     window.addEventListener('DOMContentLoaded', () => {
-        
         let params = new URLSearchParams(window.location.search);
-        let areaMap = { 'a1': 'राधानगरी', 'a2': 'भुदरगड', 'a3': 'आजरा', 'a0': 'All' };
-        let statusMap = { 's1': 'पूर्ण झालेले काम', 's2': 'चालू काम', 's3': 'मंजूर काम', 's4': 'प्रस्तावित काम', 's0': 'All' };
-
         let pArea = params.get('area');
         let pStatus = params.get('status');
         
         if(pArea && areaMap[pArea]) {
+            document.getElementById('areaDropdown').value = pArea;
             currentArea = areaMap[pArea];
-            document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
-            if(document.getElementById(pArea)) document.getElementById(pArea).classList.add('active');
         }
-        
         if(pStatus && statusMap[pStatus]) {
+            document.getElementById('statusDropdown').value = pStatus;
             currentStatus = statusMap[pStatus];
-            document.querySelectorAll('.status-btn').forEach(b => b.classList.remove('active'));
-            if(document.getElementById(pStatus)) document.getElementById(pStatus).classList.add('active');
         }
 
         
         runFilters();
 
-        
         let workId = params.get('work');
         if(workId) { setTimeout(() => showPopup(workId), 500); }
     });
