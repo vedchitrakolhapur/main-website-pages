@@ -390,7 +390,7 @@
     window.shareWork = function() {
         let w = currentPopupList[currentPopupIndex];
         let shareUrl = window.location.origin + window.location.pathname + "?work=" + w.Work_ID;
-        let shareText = "आमदार साहेब - " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
+        let shareText = "👉 " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
         
         if (navigator.share) {
             navigator.share({ title: w.Title, text: shareText, url: shareUrl }).catch(err => console.log(err));
