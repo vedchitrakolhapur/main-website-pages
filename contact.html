@@ -84,23 +84,9 @@
         .contact-hero-card p { margin: 5px 0 0 0; color: #666; font-size: 16px; font-weight: 600; }
 
          
-        .complaint-section { background: #fff5eb; padding: 25px; border-radius: 12px; margin-bottom: 35px; text-align: center; border: 1px dashed #ffd8a8; }
-        .complaint-btn { background: #25D366; color: white; border: none; padding: 15px 30px; font-size: 18px; font-weight: 700; border-radius: 30px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 10px rgba(37,211,102,0.3); font-family: 'Mukta', sans-serif;}
-        .complaint-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(37,211,102,0.4); }
-        
-        .complaint-form-wrapper { display: none; background: white; padding: 25px; border-radius: 12px; margin-top: 20px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #444; font-size: 15px;}
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; font-family: 'Mukta', sans-serif; transition: 0.2s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #E65100; outline: none; }
-        .form-submit-btn { width: 100%; background: #000080; color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; font-family: 'Mukta', sans-serif;}
-        .form-submit-btn:hover { background: #E65100; }
-
-         
         .offices-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media(min-width: 768px) { .offices-grid { grid-template-columns: 1fr 1fr; } }
-        .office-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #000080; transition: 0.3s; }
+        .office-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #000080; transition: 0.3s; display: flex; flex-direction: column; }
         .office-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-color: #E65100; }
         .office-title { font-size: 20px; color: #333; font-weight: 800; margin: 0 0 15px 0; display: flex; align-items: center; gap: 10px;}
         .office-title i { color: #E65100; }
@@ -108,6 +94,20 @@
         .office-detail i { color: #000080; font-size: 16px; margin-top: 4px; width: 20px; text-align: center;}
         .office-detail a { color: #000080; text-decoration: none; font-weight: bold; transition: 0.2s; }
         .office-detail a:hover { color: #E65100; text-decoration: underline; }
+
+         
+        .card-complaint-box { background: #fff5eb; padding: 15px; border-radius: 8px; margin-top: auto; border: 1px dashed #ffd8a8; text-align: center;}
+        .card-complaint-btn { background: #25D366; color: white; border: none; padding: 10px 15px; font-size: 15px; font-weight: 700; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; width: 100%; justify-content: center;}
+        .card-complaint-btn:hover { background: #128C7E; transform: translateY(-2px); }
+        
+        .complaint-form-wrapper { display: none; background: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 4px; color: #444; font-size: 14px;}
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: 'Mukta', sans-serif; transition: 0.2s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #E65100; outline: none; }
+        .form-submit-btn { width: 100%; background: #000080; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; font-family: 'Mukta', sans-serif; margin-top: 10px;}
+        .form-submit-btn:hover { background: #E65100; }
 
          
         .main-footer { text-align: center; padding: 12px; font-size: 12px; color: #777; border-top: 1px solid #ddd; background: #fff; margin-top: auto;}
@@ -161,8 +161,6 @@
     </div>
 
     
-    
-    
         <div class="offices-grid">
                 <div class="office-card">
             <h3 class="office-title"><i class="fas fa-building"></i> घर पत्ता </h3>
@@ -179,11 +177,12 @@
                     <a href="tel:07498663848">07498663848</a><br>                    <a href="tel:07498663848">07498663848</a><br>                                    </span>
             </div>
                         
-                        
-                        <div class="office-detail">
+                        <div class="office-detail" style="margin-bottom: 20px;">
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:vedchitragroups@gmail.com">vedchitragroups@gmail.com</a>
             </div>
+            
+            
                     </div>
                 <div class="office-card">
             <h3 class="office-title"><i class="fas fa-building"></i> आजरा संपर्क ऑफिस </h3>
@@ -199,14 +198,39 @@
                     <a href="tel:07498663848">07498663848</a><br>                                                        </span>
             </div>
                         
-                        <div class="office-detail">
-                <i class="fab fa-whatsapp" style="color:#25D366;"></i>
-                <a href="https://wa.me/918805442769" target="_blank">+91 8805442769</a>
-            </div>
-                        
-                        <div class="office-detail">
+                        <div class="office-detail" style="margin-bottom: 20px;">
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:vedchitragroups@gmail.com">vedchitragroups@gmail.com</a>
+            </div>
+            
+            
+                        <div class="card-complaint-box">
+                <button class="card-complaint-btn" onclick="toggleForm('form_1')">
+                    <i class="fab fa-whatsapp"></i> समस्या / सूचना मांडा
+                </button>
+                
+                <div class="complaint-form-wrapper" id="form_1">
+                    <h4 style="margin-top:0; color:#E65100; border-bottom:1px solid #eee; padding-bottom:8px; font-size:15px;">माहिती भरा</h4>
+                    <div class="form-group">
+                        <label>तुमचे नाव <span style="color:red;">*</span></label>
+                        <input type="text" id="name_1" placeholder="उदा. रमेश पाटील" required>
+                    </div>
+                    <div class="form-group">
+                        <label>मोबाईल नंबर <span style="color:red;">*</span></label>
+                        <input type="number" id="phone_1" placeholder="तुमचा नंबर" required>
+                    </div>
+                    <div class="form-group">
+                        <label>गाव / पत्ता</label>
+                        <input type="text" id="addr_1" placeholder="उदा. राधानगरी">
+                    </div>
+                    <div class="form-group">
+                        <label>समस्या / मेसेज <span style="color:red;">*</span></label>
+                        <textarea id="msg_1" rows="3" placeholder="तुमची समस्या येथे मांडा..." required></textarea>
+                    </div>
+                    <button class="form-submit-btn" onclick="submitToWhatsApp('8805442769', '1')">
+                        <i class="fas fa-paper-plane"></i> WhatsApp वर पाठवा
+                    </button>
+                </div>
             </div>
                     </div>
             </div>
@@ -223,22 +247,24 @@
         document.getElementById('mobileDropdown').classList.toggle('open');
     }
 
-    function toggleForm() {
-        let form = document.getElementById('waFormWrapper');
+    function toggleForm(formId) {
+        let form = document.getElementById(formId);
         if (form.style.display === "block") {
             form.style.display = "none";
         } else {
             form.style.display = "block";
             
-            window.scrollBy({ top: 150, behavior: 'smooth' });
+            setTimeout(() => {
+                form.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 100);
         }
     }
 
-    function submitToWhatsApp(targetNumber) {
-        let name = document.getElementById('waName').value.trim();
-        let phone = document.getElementById('waPhone').value.trim();
-        let addr = document.getElementById('waAddress').value.trim();
-        let msg = document.getElementById('waMessage').value.trim();
+    function submitToWhatsApp(targetNumber, index) {
+        let name = document.getElementById('name_' + index).value.trim();
+        let phone = document.getElementById('phone_' + index).value.trim();
+        let addr = document.getElementById('addr_' + index).value.trim();
+        let msg = document.getElementById('msg_' + index).value.trim();
 
         if (name === "" || phone === "" || msg === "") {
             alert("कृपया नाव, मोबाईल नंबर आणि मेसेज भरणे आवश्यक आहे.");
@@ -247,6 +273,9 @@
 
         
         let cleanTarget = targetNumber.replace(/[^0-9]/g, '');
+        
+        if(cleanTarget === '8007252504') cleanTarget = '8007262504';
+        
         if (cleanTarget.length === 10) cleanTarget = "91" + cleanTarget;
 
         let finalMessage = `*नवीन समस्या / सूचना*\n\n` +
@@ -262,13 +291,13 @@
         window.open(waUrl, '_blank');
         
         
-        document.getElementById('waFormWrapper').style.display = "none";
+        document.getElementById('form_' + index).style.display = "none";
         
         
-        document.getElementById('waName').value = "";
-        document.getElementById('waPhone').value = "";
-        document.getElementById('waAddress').value = "";
-        document.getElementById('waMessage').value = "";
+        document.getElementById('name_' + index).value = "";
+        document.getElementById('phone_' + index).value = "";
+        document.getElementById('addr_' + index).value = "";
+        document.getElementById('msg_' + index).value = "";
     }
 </script>
 </body>
