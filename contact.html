@@ -208,7 +208,7 @@
     
     
     <div class="contact-hero-card">
-        <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp">        <h2>PA2</h2>
+        <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp">        <h2>PA</h2>
         <p>आमदार  - Radhanagari</p>
     </div>
 
@@ -304,59 +304,59 @@
 
 <script>
     function toggleMobileMenu() {
-        document.getElementById('mobileDropdown').classList.toggle('open');
-    }
-
-    
-    function openForm(formId) {
-        let dialog = document.getElementById(formId);
-        if (dialog) {
-            dialog.showModal(); 
+        var dropdown = document.getElementById('mobileDropdown');
+        if (dropdown) {
+            dropdown.classList.toggle('open');
         }
     }
 
-    
+    function openForm(formId) {
+        var dialog = document.getElementById(formId);
+        if (dialog) {
+            dialog.showModal();
+        }
+    }
+
     function closeForm(formId) {
-        let dialog = document.getElementById(formId);
+        var dialog = document.getElementById(formId);
         if (dialog) {
             dialog.close();
         }
     }
 
     function submitToWhatsApp(targetNumber, index) {
-        let name = document.getElementById('name_' + index).value.trim();
-        let phone = document.getElementById('phone_' + index).value.trim();
-        let addr = document.getElementById('addr_' + index).value.trim();
-        let msg = document.getElementById('msg_' + index).value.trim();
+        var name = document.getElementById('name_' + index).value.trim();
+        var phone = document.getElementById('phone_' + index).value.trim();
+        var addr = document.getElementById('addr_' + index).value.trim();
+        var msg = document.getElementById('msg_' + index).value.trim();
 
         if (name === "" || phone === "" || msg === "") {
             alert("कृपया नाव, मोबाईल नंबर आणि मेसेज भरणे आवश्यक आहे.");
             return;
         }
 
+        var cleanTarget = String(targetNumber).replace(/[^0-9]/g, '');
         
-        let cleanTarget = String(targetNumber).replace(/[^0-9]/g, '');
+        if (cleanTarget === '8007252504') {
+            cleanTarget = '8007262504';
+        }
         
-        
-        if(cleanTarget === '8007252504') cleanTarget = '8007262504';
-        
-        if (cleanTarget.length === 10) cleanTarget = "91" + cleanTarget;
+        if (cleanTarget.length === 10) {
+            cleanTarget = "91" + cleanTarget;
+        }
 
-        let finalMessage = `*नवीन समस्या / सूचना*\n\n` +
-                           `*नाव:* ${name}\n` +
-                           `*मोबाईल:* ${phone}\n` +
-                           `*पत्ता:* ${addr ? addr : '-'}\n` +
-                           `*मेसेज:* ${msg}\n\n` +
-                           `_(वेबसाईटवरून पाठवलेला मेसेज)_`;
+        var finalMessage = "*नवीन समस्या / सूचना*\n\n" +
+                           "*नाव:* " + name + "\n" +
+                           "*मोबाईल:* " + phone + "\n" +
+                           "*पत्ता:* " + (addr ? addr : "-") + "\n" +
+                           "*मेसेज:* " + msg + "\n\n" +
+                           "_(वेबसाईटवरून पाठवलेला मेसेज)_";
 
-        let waUrl = `https:
-        
+        var waUrl = "https://wa.me/" + cleanTarget + "?text=" + encodeURIComponent(finalMessage);
         
         window.open(waUrl, '_blank');
         
-        
         closeForm('form_' + index);
-        
         
         document.getElementById('name_' + index).value = "";
         document.getElementById('phone_' + index).value = "";
