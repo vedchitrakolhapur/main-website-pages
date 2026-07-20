@@ -1,56 +1,405 @@
 <!DOCTYPE html>
 <html lang="mr">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>फोटो गॅलरी | सतीश उपळकर </title>
+    <title>सतीश उपळकर  - फोटो गॅलरी</title>
+    
+    
+    <link rel="icon" href="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp" type="image/png">
+
+    
+    <meta name="description" content="मतदारसंघातील विकासकामे, सामाजिक उपक्रम आणि विविध कार्यक्रमांची खास फोटो गॅलरी.">
+    <meta name="keywords" content="Radhanagari, Kolhapur">
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="सतीश उपळकर  - फोटो गॅलरी">
+    <meta property="og:description" content="मतदारसंघातील विकासकामे, सामाजिक उपक्रम आणि विविध कार्यक्रमांची खास फोटो गॅलरी.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114023186_8422.webp">
+
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="सतीश उपळकर  - फोटो गॅलरी">
+    <meta property="twitter:description" content="मतदारसंघातील विकासकामे, सामाजिक उपक्रम आणि विविध कार्यक्रमांची खास फोटो गॅलरी.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114023186_8422.webp">
+
+    
+        <meta name="google-site-verification" content="GS44444" />
+    
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GA4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA4');
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    
     <style>
+         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Mukta', sans-serif; }
-        body { background: #f9f9f9; color: #333; }
-        header { background: #000080; color: white; padding: 15px; text-align: center; font-weight: 800; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+        body { background: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 0; display: flex; flex-direction: column; min-height: 100vh;}
         
          
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
-        .gallery-item { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
-        .gallery-item:hover { transform: scale(1.05); }
+        .main-header { background: linear-gradient(135deg, #E65100 0%, #BF360C 100%); color: white; padding: 25px 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); position: relative; z-index: 101; }
+        .header-main-block { display: flex; align-items: center; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
+        .logo-wrapper { position: relative; display: inline-block; flex-shrink: 0; }
+        .header-logo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 3px solid white; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .party-logo { position: absolute; bottom: -5px; right: -10px; width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid white; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+        .header-text { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .header-text h1 { margin: 0; font-size: 26px; font-weight: 800; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); line-height: 1.2; }
+        .header-text h3 { margin: 0; font-size: 16px; font-weight: 600; opacity: 0.95; line-height: 1.2; }
+        .header-text p { margin: 0; font-size: 14px; font-weight: 400; opacity: 0.9; line-height: 1.2; }
+
+         
+        .mobile-menu-btn { position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: white; font-size: 26px; cursor: pointer; display: none; padding: 5px; }
+        .mobile-dropdown { display: none; background: white; flex-direction: column; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: absolute; top: 100%; left: 0; width: 100%; z-index: 100; border-top: 3px solid #E65100; }
+        .mobile-dropdown.open { display: flex; }
+        .mobile-dropdown a { padding: 15px 20px; border-bottom: 1px solid #eee; text-decoration: none; color: #333; font-weight: 600; display: flex; align-items: center; gap: 12px; font-size: 16px; }
+        .mobile-dropdown a i { font-size: 18px; color: #E65100; width: 25px; text-align: center; }
+        
+         
+        .desktop-nav { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 99; display: none; justify-content: center; gap: 20px; padding: 10px; }
+        .desktop-nav a { text-decoration: none; color: #333; font-weight: 600; font-size: 16px; padding: 5px 10px; transition: 0.3s; }
+        .desktop-nav a:hover, .desktop-nav a.active { color: #E65100; border-bottom: 2px solid #E65100; }
+        @media(min-width: 768px) { .desktop-nav { display: flex; } .mobile-menu-btn { display: none !important; } .mobile-dropdown { display: none !important; } }
+        @media(max-width: 767px) { .mobile-menu-btn { display: block; } }
+
+         
+        .container { max-width: 1000px; margin: 0 auto; padding: 30px 15px; flex-grow: 1; }
+        .page-title { font-size: 28px; color: #000080; font-weight: 800; text-align: center; margin-bottom: 30px; position: relative; display: flex; justify-content: center; align-items: center; gap: 15px;}
+        .page-title i { color: #E65100; font-size: 30px; }
+        .page-title::after, .page-title::before { content: ""; height: 3px; width: 40px; background: #E65100; border-radius: 5px; display: inline-block; }
+
+         
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .gallery-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; transition: 0.3s; border: 1px solid #eee; position: relative;}
+        .gallery-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); border-color: #E65100; }
+        .gallery-img { width: 100%; height: 200px; object-fit: cover; display: block; background: #eee;}
+        
+        .gallery-date { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; backdrop-filter: blur(2px);}
+        .photo-count { position: absolute; bottom: 10px; right: 10px; background: #E65100; color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.3);}
+        .gallery-placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; background: #ffebeb; color: #E65100; font-size: 40px; }
+
+         
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+        .page-btn { background: white; border: 1px solid #ccc; padding: 8px 14px; border-radius: 8px; cursor: pointer; color: #333; font-weight: bold; font-size: 15px; transition: 0.3s; display: flex; align-items: center; justify-content: center; min-width: 40px;}
+        .page-btn:hover:not(:disabled) { background: #E65100; color: white; border-color: #E65100; }
+        .page-btn.active { background: #000080; color: white; border-color: #000080; }
+        .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .page-dots { color: #888; font-weight: bold; padding: 0 5px; }
+
+         
+        .main-footer { text-align: center; padding: 12px; font-size: 12px; color: #777; border-top: 1px solid #ddd; background: #fff; margin-top: auto;}
+        .main-footer a { color: #E65100; text-decoration: none; font-weight: bold; transition: 0.2s; }
+        .main-footer a:hover { color: #BF360C; text-decoration: underline; }
+        
+         
+        body.no-scroll { overflow: hidden; }
+        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:9999; padding: 25px 10px 10px; backdrop-filter: blur(5px);}
+        .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.95); border: 2px solid #000080; width: 50px; height: 50px; border-radius: 50%; font-size: 22px; color: #000080; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .nav-arrow:hover { background: #000080; color: white; transform: translateY(-50%) scale(1.1); }
+        .nav-arrow:disabled { opacity: 0.4; cursor: not-allowed; border-color: #999; color: #999; }
+        .left-arrow { left: 10px; } .right-arrow { right: 10px; }
+        @media(max-width: 768px) { .nav-arrow { width: 40px; height: 40px; font-size: 18px; } .left-arrow { left: 5px; } .right-arrow { right: 5px; } }
+
+        .modal-content { background: #f4f6f9; width: 100%; max-width: 650px; max-height: 90vh; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); animation: popIn 0.3s; display: flex; flex-direction: column;}
+        @keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        
+         
+        .modal-header-fixed { background: white; padding: 12px 20px; border-radius: 16px 16px 0 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #eee; flex-shrink: 0; z-index: 10; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .modal-header-left { display: flex; align-items: center; gap: 12px; }
+        .modal-header-left img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #E65100; object-fit: cover; }
+        .modal-header-right { display: flex; align-items: center; gap: 10px; }
+        
+        .modal-share-icon { background: #f0f2f5; color: #333; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; transition: 0.2s; }
+        .modal-share-icon:hover { background: #E65100; color: white; }
+        
+         
+        .modal-close-icon { background: #dc3545; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; transition: 0.2s; }
+        .modal-close-icon:hover { background: #c82333; transform: scale(1.1); }
+
+        .modal-scroll-area { overflow-y: auto; padding: 20px; flex-grow: 1; scrollbar-width: none; -ms-overflow-style: none; border-radius: 0 0 16px 16px; background: #fff;}
+        .modal-scroll-area::-webkit-scrollbar { display: none; }
+        .modal-img-container img { width: 100%; padding: 5px; background: #fff; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; object-fit: cover; }
+        .yt-iframe-wrapper { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: block; }
+        .yt-iframe-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     </style>
 </head>
 <body>
 
-<header>फोटो गॅलरी</header>
+
+<header class="main-header">
+    <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    <div class="header-main-block">
+        <div class="logo-wrapper">
+            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp" class="header-logo">            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784285748683_5621.webp" class="party-logo">        </div>
+        <div class="header-text">
+            <h1>सतीश उपळकर </h1>
+            <h3>महाराष्ट्र राज्य</h3>            <p>राधानगरी मतदारसंघ)</p>        </div>
+    </div>
+    
+    <div id="mobileDropdown" class="mobile-dropdown">
+        <a href="index.html"><i class="fas fa-home"></i> मुख्य पान</a>
+        <a href="minister.html"><i class="fas fa-briefcase"></i> मंत्री निर्णय</a>
+        <a href="vikas-kame.html"><i class="fas fa-road"></i> विकासकामे</a>
+        <a href="samajik.html"><i class="fas fa-users"></i> सामाजिक कार्ये</a>
+        <a href="gallery.html"><i class="fas fa-images"></i> गॅलरी</a>
+        <a href="about.html"><i class="fas fa-user"></i> प्रवास</a>
+        <a href="contact.html"><i class="fas fa-address-book"></i> संपर्क</a>
+    </div>
+</header>
+
+<nav class="desktop-nav">
+    <a href="index.html"><i class="fas fa-home"></i> मुख्य पान</a>
+    <a href="minister.html"><i class="fas fa-briefcase"></i> मंत्री निर्णय</a>
+    <a href="vikas-kame.html"><i class="fas fa-road"></i> विकासकामे</a>
+    <a href="samajik.html"><i class="fas fa-users"></i> सामाजिक कार्ये</a>
+    <a href="gallery.html" class="active"><i class="fas fa-images"></i> गॅलरी</a>
+    <a href="about.html"><i class="fas fa-user"></i> प्रवास</a>
+    <a href="contact.html"><i class="fas fa-address-book"></i> संपर्क</a>
+</nav>
+
 
 <div class="container">
-    <div class="gallery-grid" id="galleryContainer">
-        
+    <h1 class="page-title"><i class="fas fa-images"></i> फोटो गॅलरी</h1>
+    
+    
+    <div id="galleryListContainer" class="gallery-grid"></div>
+
+    
+    <div id="paginationContainer" class="pagination"></div>
+</div>
+
+
+<footer class="main-footer">
+    Website Developed by Dr. Satish | Powered by <a href="https://mbiz.in" target="_blank">mbiz.in</a>
+</footer>
+
+
+<div class="modal-overlay" id="popup">
+    <button id="prevBtn" class="nav-arrow left-arrow" onclick="navigatePopup(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button id="nextBtn" class="nav-arrow right-arrow" onclick="navigatePopup(1)"><i class="fas fa-chevron-right"></i></button>
+    
+    <div class="modal-content">
+        <div class="modal-header-fixed">
+            <div class="modal-header-left">
+                <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp">                <div>
+                    <h3 style="margin:0; font-size:15px; color:#333; line-height:1.2;">सतीश उपळकर </h3>
+                    <span id="modalCategory" style="background:#E65100; color:white; padding:2px 8px; border-radius:12px; font-size:10px; font-weight:bold; display:inline-block; margin-top:3px;"></span>
+                </div>
+            </div>
+            
+            <div class="modal-header-right">
+                <button class="modal-share-icon" onclick="shareWork()" title="शेअर करा"><i class="fas fa-share-alt"></i></button>
+                <button class="modal-close-icon" onclick="closePopup()" title="बंद करा"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="modal-scroll-area" id="modalScrollableArea">
+            <h2 id="modalTitle" style="color:#333; margin-bottom:15px; font-size:20px; line-height:1.4;"></h2>
+            <div id="modalMeta" style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; font-size:13px; font-weight:bold; color:#666;"></div>
+            <div id="modalYTContainer"></div>
+            <div id="modalDesc" style="line-height:1.8; color:#444; font-size:15px; text-align:justify; margin-bottom:20px;"></div>
+            <div id="modalImages" class="modal-img-container"></div>
+        </div>
     </div>
 </div>
 
 <script>
-    const allWorks = [{"Work_ID":"work-1784347351426","Date":"2026-07-18","Category":"विकासकामे","Title":"पॉपअप मधील नेक्स्ट/प्रिव्हियस बटणे आता गडद निळ्या","Bhag":"आजरा","Status_Filter":"चालू काम","Fund":"25.4 lakh","Photos":"[]","YT_Link":"","Description":"<p>स्लाइडर आता जुन्या स्टाईलप्रमाणे हेडरपासून वेगळा (सुटा) केला आहे. ३. <strong>Testimonial Description:</strong> जुना Description बॉक्स काढून तिथे खूप आकर्षक <strong>'Testimonial (मनोगत)'</strong> स्टाईलचा बॉक्स दिला आहे, ज्यामध्ये तुम्ही सांगितलेला डमी मजकूर, खाली तुमचा फोटो, नाव आणि लेबल्स जोडले आहेत.</p>","DB_Status":"Active","rowIndex":2},{"Work_ID":"work-1784200040767","Date":"2026-07-16","Category":"मंत्री निर्णय","Title":"प्रिव्हियस केल्यावर नेहमी टायटलपासून वाचण्यास सुरु होईल.","Bhag":"","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":3},{"Work_ID":"work-1784200005260","Date":"2026-07-16","Category":"विकासकामे","Title":"नेक्स्ट पॉपअप नेहमी टायटलपासून चण्यास सुरु होईल.","Bhag":"आजरा","Status_Filter":"मंजूर काम","Fund":"","Photos":"[]","YT_Link":"https://youtu.be/K5PUF5O1wmk?si=e8roVMLZq8DZa7ac","Description":"<p><br></p>","DB_Status":"Active","rowIndex":4},{"Work_ID":"work-1784181191615","Date":"2026-07-16","Category":"सामाजिक कार्ये","Title":"रक्तदान शिबिर आयोजित  मध्ये नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181184794_7188.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181169176_4222.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":5},{"Work_ID":"work-1784111936203","Date":"2026-07-15","Category":"विकासकामे","Title":"नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"पूर्ण झालेले काम","Fund":"40877","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181101142_3103.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181093812_7765.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181084971_5210.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784111928664.webp\"]","YT_Link":"","Description":"<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Multiple image upload साठी select केल्यास पहिल्या फक्त image चे लोकल stoarage thumbnail दिसते. बाकीच्या इमेज ते broken image स्वरूपात thumbnail दिसते.</span></p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Info details मध्ये social media links जोडण्यासाठी (fb, instagram, yt, twitter) option ठेवा.</span></p>","DB_Status":"Active","rowIndex":6},{"Work_ID":"work-1784022650212","Date":"2026-07-14","Category":"विकासकामे","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"राधानगरी","Status_Filter":"प्रस्तावित काम","Fund":"450000","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022633792.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022624630.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":7},{"Work_ID":"work-1784022576007","Date":"2026-07-14","Category":"मंत्री निर्णय","Title":"वेबसाईट करण्यासाठी तुम्ही आता खालील पावले उचलणे आवश्यक आहे:","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181971549_7218.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210522_9969.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210061_6136.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177138856_7341.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022552545.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p><p><br></p><p>वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:</p>","DB_Status":"Active","rowIndex":8},{"Work_ID":"work-1784022505343","Date":"2026-07-14","Category":"सामाजिक कार्ये","Title":"आरोग्य वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022476613.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":9},{"Work_ID":"work-1784022412393","Date":"2026-07-14","Category":"गॅलरी","Title":"","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022403972.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022367708.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022359766.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":10},{"Work_ID":"work-1784022327033","Date":"2026-07-20","Category":"बातम्या","Title":"आरोग्य शिबिर","Bhag":"राधानगरी","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022320937.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":11},{"Work_ID":"work-1784022248400","Date":"2026-07-14","Category":"बातम्या","Title":"रक्तदान शिबिर","Bhag":"आजरा","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":12}];
+    const allWorks = [{"Work_ID":"work-1784347351426","Date":"2026-07-18","Category":"विकासकामे","Title":"पॉपअप मधील नेक्स्ट/प्रिव्हियस बटणे आता गडद निळ्या","Bhag":"आजरा","Status_Filter":"चालू काम","Fund":"25.4 lakh","Photos":"[]","YT_Link":"","Description":"<p>स्लाइडर आता जुन्या स्टाईलप्रमाणे हेडरपासून वेगळा (सुटा) केला आहे. ३. <strong>Testimonial Description:</strong> जुना Description बॉक्स काढून तिथे खूप आकर्षक <strong>'Testimonial (मनोगत)'</strong> स्टाईलचा बॉक्स दिला आहे, ज्यामध्ये तुम्ही सांगितलेला डमी मजकूर, खाली तुमचा फोटो, नाव आणि लेबल्स जोडले आहेत.</p>","DB_Status":"Active","rowIndex":2},{"Work_ID":"work-1784200040767","Date":"2026-07-16","Category":"मंत्री निर्णय","Title":"प्रिव्हियस केल्यावर नेहमी टायटलपासून वाचण्यास सुरु होईल माहिती","Bhag":"","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"https://www.youtube.com/shorts/YLqXU269jOQ","Description":"<p><br></p>","DB_Status":"Active","rowIndex":3},{"Work_ID":"work-1784200005260","Date":"2026-07-16","Category":"विकासकामे","Title":"नेक्स्ट पॉपअप नेहमी टायटलपासून चण्यास सुरु होईल.","Bhag":"आजरा","Status_Filter":"मंजूर काम","Fund":"","Photos":"[]","YT_Link":"https://youtu.be/K5PUF5O1wmk?si=e8roVMLZq8DZa7ac","Description":"<p><br></p>","DB_Status":"Active","rowIndex":4},{"Work_ID":"work-1784181191615","Date":"2026-07-16","Category":"सामाजिक कार्ये","Title":"रक्तदान शिबिर आयोजित  मध्ये नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181184794_7188.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181169176_4222.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":5},{"Work_ID":"work-1784111936203","Date":"2026-07-15","Category":"विकासकामे","Title":"नेमका काय आणि कोठे कोड टाकायचा ते द्या .","Bhag":"भुदरगड","Status_Filter":"पूर्ण झालेले काम","Fund":"40877","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181101142_3103.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181093812_7765.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181084971_5210.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784111928664.webp\"]","YT_Link":"","Description":"<p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Multiple image upload साठी select केल्यास पहिल्या फक्त image चे लोकल stoarage thumbnail दिसते. बाकीच्या इमेज ते broken image स्वरूपात thumbnail दिसते.</span></p><p><br></p><p><span style=\"background-color: transparent; color: rgb(0, 0, 0);\">Info details मध्ये social media links जोडण्यासाठी (fb, instagram, yt, twitter) option ठेवा.</span></p>","DB_Status":"Active","rowIndex":6},{"Work_ID":"work-1784022650212","Date":"2026-07-14","Category":"विकासकामे","Title":"वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"राधानगरी","Status_Filter":"प्रस्तावित काम","Fund":"450000","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022633792.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022624630.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":7},{"Work_ID":"work-1784022576007","Date":"2026-07-14","Category":"मंत्री निर्णय","Title":"वेबसाईट करण्यासाठी तुम्ही आता खालील पावले उचलणे आवश्यक आहे:","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784181971549_7218.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210522_9969.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177210061_6136.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784177138856_7341.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022552545.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p><p><br></p><p>वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:</p>","DB_Status":"Active","rowIndex":8},{"Work_ID":"work-1784022505343","Date":"2026-07-14","Category":"सामाजिक कार्ये","Title":"आरोग्य वेबसाईट लाईव्ह करण्यासाठी तुम्ही आता खालील अंतिम ३ पावले उचलणे आवश्यक आहे:","Bhag":"भुदरगड","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022476613.webp\"]","YT_Link":"","Description":"<p>तुम्ही दिलेला सर्व कोड (Builder.html, Code.js, IndexTemplate.html, आणि इतर सर्व टेम्प्लेट्स) तांत्रिकदृष्ट्या <strong>पूर्ण आणि योग्य</strong> आहे. तुम्ही दिलेली रचना आमदार प्रकाश आबिटकर यांच्या पोर्टफोलिओ वेबसाईटसाठी अतिशय सक्षम आहे. </p>","DB_Status":"Active","rowIndex":9},{"Work_ID":"work-1784022412393","Date":"2026-07-14","Category":"गॅलरी","Title":"","Bhag":"","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022403972.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022367708.webp\",\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022359766.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":10},{"Work_ID":"work-1784022327033","Date":"2026-07-20","Category":"बातम्या","Title":"आरोग्य शिबिर","Bhag":"राधानगरी","Status_Filter":"","Fund":"","Photos":"[\"https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784022320937.webp\"]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":11},{"Work_ID":"work-1784022248400","Date":"2026-07-14","Category":"बातम्या","Title":"रक्तदान शिबिर","Bhag":"आजरा","Status_Filter":"","Fund":"","Photos":"[]","YT_Link":"","Description":"<p><br></p>","DB_Status":"Active","rowIndex":12}];
     
-    function renderGallery() {
-        let container = document.getElementById('galleryContainer');
-        let html = '';
-        
-        
-        allWorks.forEach(w => {
-            if(w.Category === 'गॅलरी' && w.Photos) {
-                try {
-                    let photos = JSON.parse(w.Photos);
-                    photos.forEach(url => {
-                        html += `<img src="${url}" class="gallery-item" onclick="window.open('${url}', '_blank')">`;
-                    });
-                } catch(e) {}
-            }
-        });
-        
-        container.innerHTML = html || '<p style="text-align:center; grid-column: 1/-1;">सध्या फोटो उपलब्ध नाहीत.</p>';
+    
+    let galleryWorks = allWorks.filter(w => w.Category === 'गॅलरी');
+    galleryWorks.sort((a, b) => new Date(b.Date) - new Date(a.Date)); 
+
+    
+    let currentPage = 1;
+    const itemsPerPage = 15; 
+    let currentPopupIndex = -1;
+
+    function toggleMobileMenu() {
+        document.getElementById('mobileDropdown').classList.toggle('open');
     }
 
-    renderGallery();
+    function formatDate(dStr) { return dStr ? dStr.split('T')[0] : ''; }
+
+    function getEmbedUrl(url) {
+        if(!url) return '';
+        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
+        return (match && match[1]) ? "https:" + "//www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
+    }
+
+    
+    function renderList() {
+        const listContainer = document.getElementById('galleryListContainer');
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const currentItems = galleryWorks.slice(startIndex, endIndex);
+
+        if (currentItems.length === 0) {
+            listContainer.style.display = "block";
+            listContainer.innerHTML = '<div style="text-align:center; padding: 40px 20px; background: white; border-radius: 12px; grid-column: 1 / -1;"><i class="fas fa-images" style="font-size: 40px; color: #ccc; margin-bottom: 15px; display:block;"></i><p style="color:#777; font-size: 18px; margin:0;">सध्या गॅलरीमध्ये कोणतेही फोटो उपलब्ध नाहीत.</p></div>';
+            return;
+        }
+
+        let html = '';
+        currentItems.forEach(w => {
+            let photos = [];
+            try { photos = JSON.parse(w.Photos || '[]'); } catch(e){}
+            
+            let dateMeta = formatDate(w.Date);
+            let imgBlock = ''; 
+
+            if (photos.length > 0) {
+                imgBlock = `<img src="${photos[0]}" class="gallery-img">`;
+            } else {
+                imgBlock = `<div class="gallery-placeholder"><i class="fas fa-image"></i></div>`;
+            }
+            
+            let photoCountIndicator = '';
+            if (photos.length > 1) {
+                photoCountIndicator = `<div class="photo-count"><i class="fas fa-clone"></i> +${photos.length - 1}</div>`;
+            }
+            
+            html += `
+            <div class="gallery-card" onclick="showPopup('${w.Work_ID}')">
+                ${imgBlock}
+                <div class="gallery-date"><i class="far fa-calendar-alt"></i> ${dateMeta}</div>
+                ${photoCountIndicator}
+            </div>`;
+        });
+        
+        listContainer.innerHTML = html;
+    }
+
+    // Smart Pagination Logic 
+    function renderPagination() {
+        const totalPages = Math.ceil(galleryWorks.length / itemsPerPage);
+        const paginationEl = document.getElementById('paginationContainer');
+        
+        if(totalPages <= 1) { 
+            paginationEl.innerHTML = ''; 
+            return; 
+        }
+
+        let html = '';
+
+        
+        html += `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})"><i class="fas fa-chevron-left"></i></button>`;
+
+        
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, currentPage + 2);
+
+        if(startPage > 1) {
+            html += `<button class="page-btn" onclick="changePage(1)">1</button>`;
+            if(startPage > 2) html += `<span class="page-dots">...</span>`;
+        }
+
+        for(let i = startPage; i <= endPage; i++) {
+            html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+        }
+
+        if(endPage < totalPages) {
+            if(endPage < totalPages - 1) html += `<span class="page-dots">...</span>`;
+            html += `<button class="page-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
+        }
+
+        // Next Button
+        html += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})"><i class="fas fa-chevron-right"></i></button>`;
+
+        paginationEl.innerHTML = html;
+    }
+
+    window.changePage = function(page) {
+        if(page < 1 || page > Math.ceil(galleryWorks.length / itemsPerPage)) return;
+        currentPage = page;
+        renderList();
+        renderPagination();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    
+    window.showPopup = function(id) {
+        let work = galleryWorks.find(w => w.Work_ID === id);
+        if(!work) return;
+        currentPopupIndex = galleryWorks.findIndex(w => w.Work_ID === id);
+        
+        renderPopupContent();
+        document.getElementById('popup').style.display = 'flex';
+        document.body.classList.add('no-scroll'); 
+    };
+
+    window.closePopup = function() {
+        document.getElementById('popup').style.display = 'none';
+        document.body.classList.remove('no-scroll');
+        document.getElementById('modalYTContainer').innerHTML = ''; 
+    };
+
+    window.navigatePopup = function(direction) {
+        currentPopupIndex += direction;
+        renderPopupContent();
+    };
+
+    function renderPopupContent() {
+        let w = galleryWorks[currentPopupIndex];
+        
+        document.getElementById('modalCategory').innerText = w.Category;
+        
+        document.getElementById('modalTitle').innerText = w.Title || 'गॅलरी फोटो';
+        document.getElementById('modalTitle').style.display = w.Title ? 'block' : 'none';
+        
+        let metaHtml = `<span style="background:#f0f2f5; padding:4px 10px; border-radius:20px;"><i class="far fa-calendar-alt"></i> ${formatDate(w.Date)}</span>`;
+        document.getElementById('modalMeta').innerHTML = metaHtml;
+
+        document.getElementById('modalYTContainer').innerHTML = '';
+        document.getElementById('modalDesc').innerHTML = w.Description || '';
+
+        let imgHtml = '';
+        try {
+            let photos = JSON.parse(w.Photos || '[]');
+            photos.forEach(imgUrl => { imgHtml += `<img src="${imgUrl}">`; });
+        } catch(e) {}
+        document.getElementById('modalImages').innerHTML = imgHtml;
+
+        document.getElementById('prevBtn').disabled = (currentPopupIndex === 0);
+        document.getElementById('nextBtn').disabled = (currentPopupIndex === galleryWorks.length - 1);
+        
+        document.getElementById('modalScrollableArea').scrollTop = 0;
+    }
+
+    window.shareWork = function() {
+        let w = galleryWorks[currentPopupIndex];
+        let shareUrl = window.location.origin + window.location.pathname + "?work=" + w.Work_ID;
+        let shareTitle = w.Title || "गॅलरी फोटो";
+        let shareText = "👉 " + shareTitle + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
+        
+        if (navigator.share) {
+            navigator.share({ title: shareTitle, text: shareText, url: shareUrl }).catch(err => console.log(err));
+        } else {
+            let waLink = "https:" + "//wa.me/?text=" + encodeURIComponent(shareText + shareUrl);
+            window.open(waLink, '_blank');
+        }
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+        
+        renderList();
+        renderPagination();
+
+        
+        let params = new URLSearchParams(window.location.search);
+        let workId = params.get('work');
+        if(workId) { setTimeout(() => showPopup(workId), 500); }
+    });
+
 </script>
 </body>
 </html>
