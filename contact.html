@@ -84,21 +84,6 @@
         .contact-hero-card p { margin: 5px 0 0 0; color: #666; font-size: 16px; font-weight: 600; }
 
          
-        .main-complaint-section { background: #fff5eb; padding: 25px; border-radius: 12px; margin-bottom: 35px; text-align: center; border: 1px dashed #ffd8a8; }
-        .main-complaint-btn { background: #25D366; color: white; border: none; padding: 15px 30px; font-size: 18px; font-weight: 700; border-radius: 30px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 4px 10px rgba(37,211,102,0.3); font-family: 'Mukta', sans-serif;}
-        .main-complaint-btn:hover { background: #128C7E; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(37,211,102,0.4); }
-        
-        .main-complaint-form-wrapper { display: none; background: white; padding: 25px; border-radius: 12px; margin-top: 20px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; animation: fadeIn 0.3s; }
-        
-        @keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #444; font-size: 15px;}
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; font-family: 'Mukta', sans-serif; transition: 0.2s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: #E65100; outline: none; }
-        .form-submit-btn { width: 100%; background: #000080; color: white; border: none; padding: 15px; font-size: 18px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.3s; font-family: 'Mukta', sans-serif;}
-        .form-submit-btn:hover { background: #E65100; }
-
-         
         .offices-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media(min-width: 768px) { .offices-grid { grid-template-columns: 1fr 1fr; } }
         .office-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #000080; transition: 0.3s; display: flex; flex-direction: column; }
@@ -115,11 +100,14 @@
         .card-complaint-btn { background: #25D366; color: white; border: none; padding: 10px 15px; font-size: 15px; font-weight: 700; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; width: 100%; justify-content: center;}
         .card-complaint-btn:hover { background: #128C7E; transform: translateY(-2px); }
         
-        .card-form-wrapper { display: none; background: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; animation: fadeIn 0.3s; }
-        .card-form-wrapper .form-group { margin-bottom: 12px; }
-        .card-form-wrapper .form-group label { font-size: 14px; }
-        .card-form-wrapper .form-group input, .card-form-wrapper .form-group textarea { padding: 10px; font-size: 14px; border-radius: 6px; }
-        .card-form-wrapper .form-submit-btn { padding: 12px; font-size: 15px; border-radius: 6px; margin-top: 10px; }
+        .complaint-form-wrapper { display: none; background: white; padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 4px; color: #444; font-size: 14px;}
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; font-family: 'Mukta', sans-serif; transition: 0.2s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: #E65100; outline: none; }
+        .form-submit-btn { width: 100%; background: #000080; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: 0.3s; font-family: 'Mukta', sans-serif; margin-top: 10px;}
+        .form-submit-btn:hover { background: #E65100; }
 
          
         .main-footer { text-align: center; padding: 12px; font-size: 12px; color: #777; border-top: 1px solid #ddd; background: #fff; margin-top: auto;}
@@ -132,7 +120,7 @@
 
 
 <header class="main-header">
-    <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+    <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
     <div class="header-main-block">
         <div class="logo-wrapper">
             <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784114012556_3893.webp" class="header-logo">            <img src="https://raw.githubusercontent.com/vedchitrakolhapur/media-store-1/main/assets/images/img_1784285748683_5621.webp" class="party-logo">        </div>
@@ -172,8 +160,6 @@
         <p>आमदार  - Radhanagari</p>
     </div>
 
-    
-    
     
         <div class="offices-grid">
                 <div class="office-card">
@@ -219,11 +205,11 @@
             
             
                         <div class="card-complaint-box">
-                <button class="card-complaint-btn" onclick="toggleForm('form_1')">
+                <button type="button" class="card-complaint-btn" onclick="toggleForm('form_1')">
                     <i class="fab fa-whatsapp"></i> समस्या / सूचना मांडा
                 </button>
                 
-                <div class="card-form-wrapper" id="form_1">
+                <div class="complaint-form-wrapper" id="form_1">
                     <h4 style="margin-top:0; color:#E65100; border-bottom:1px solid #eee; padding-bottom:8px; font-size:15px;">माहिती भरा</h4>
                     <div class="form-group">
                         <label>तुमचे नाव <span style="color:red;">*</span></label>
@@ -241,7 +227,7 @@
                         <label>समस्या / मेसेज <span style="color:red;">*</span></label>
                         <textarea id="msg_1" rows="3" placeholder="तुमची समस्या येथे मांडा..." required></textarea>
                     </div>
-                    <button class="form-submit-btn" onclick="submitToWhatsApp('8805442769', '1')">
+                    <button type="button" class="form-submit-btn" onclick="submitToWhatsApp('8805442769', '1')">
                         <i class="fas fa-paper-plane"></i> WhatsApp वर पाठवा
                     </button>
                 </div>
@@ -263,28 +249,25 @@
 
     function toggleForm(formId) {
         let form = document.getElementById(formId);
-        if (form.style.display === "block") {
-            form.style.display = "none";
-        } else {
+        if (!form) return;
+        
+        
+        if (window.getComputedStyle(form).display === "none") {
             form.style.display = "block";
             
             setTimeout(() => {
                 form.scrollIntoView({ behavior: "smooth", block: "center" });
             }, 100);
+        } else {
+            form.style.display = "none";
         }
     }
 
-    function submitToWhatsApp(targetNumber, typeOrIndex) {
-        let nameId = (typeOrIndex === 'main') ? 'mainWaName' : 'name_' + typeOrIndex;
-        let phoneId = (typeOrIndex === 'main') ? 'mainWaPhone' : 'phone_' + typeOrIndex;
-        let addrId = (typeOrIndex === 'main') ? 'mainWaAddress' : 'addr_' + typeOrIndex;
-        let msgId = (typeOrIndex === 'main') ? 'mainWaMessage' : 'msg_' + typeOrIndex;
-        let wrapperId = (typeOrIndex === 'main') ? 'mainWaFormWrapper' : 'form_' + typeOrIndex;
-
-        let name = document.getElementById(nameId).value.trim();
-        let phone = document.getElementById(phoneId).value.trim();
-        let addr = document.getElementById(addrId).value.trim();
-        let msg = document.getElementById(msgId).value.trim();
+    function submitToWhatsApp(targetNumber, index) {
+        let name = document.getElementById('name_' + index).value.trim();
+        let phone = document.getElementById('phone_' + index).value.trim();
+        let addr = document.getElementById('addr_' + index).value.trim();
+        let msg = document.getElementById('msg_' + index).value.trim();
 
         if (name === "" || phone === "" || msg === "") {
             alert("कृपया नाव, मोबाईल नंबर आणि मेसेज भरणे आवश्यक आहे.");
@@ -292,7 +275,7 @@
         }
 
         
-        let cleanTarget = targetNumber.replace(/[^0-9]/g, '');
+        let cleanTarget = String(targetNumber).replace(/[^0-9]/g, '');
         
         
         if(cleanTarget === '8007252504') cleanTarget = '8007262504';
@@ -312,13 +295,13 @@
         window.open(waUrl, '_blank');
         
         
-        document.getElementById(wrapperId).style.display = "none";
+        document.getElementById('form_' + index).style.display = "none";
         
         
-        document.getElementById(nameId).value = "";
-        document.getElementById(phoneId).value = "";
-        document.getElementById(addrId).value = "";
-        document.getElementById(msgId).value = "";
+        document.getElementById('name_' + index).value = "";
+        document.getElementById('phone_' + index).value = "";
+        document.getElementById('addr_' + index).value = "";
+        document.getElementById('msg_' + index).value = "";
     }
 </script>
 </body>
