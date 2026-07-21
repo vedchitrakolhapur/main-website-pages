@@ -251,9 +251,9 @@ body { background: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 0; }
         <h2 class="section-title"><i class="fas fa-road"></i> मतदारसंघातील विकासकामे</h2>
         <div id="vikasContainer"></div>
         <div class="area-grid">
-            <a href="vikas-kame?area=a1" class="area-card">राधानगरी</a>
-            <a href="vikas-kame?area=a2" class="area-card">भुदरगड</a>
-            <a href="vikas-kame?area=a3" class="area-card">आजरा</a>
+            <a href="vikas-kame.html" class="area-card">राधानगरी</a>
+            <a href="vikas-kame.html" class="area-card">भुदरगड</a>
+            <a href="vikas-kame.html" class="area-card">आजरा</a>
         </div>
         <a href="vikas-kame.html" class="view-all-btn">संपूर्ण मतदारसंघातील कामे पहा <i class="fas fa-arrow-right"></i></a>
     </div>
@@ -350,10 +350,12 @@ body { background: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 0; }
 
     function formatDate(dStr) { return dStr ? dStr.split('T')[0] : ''; }
 
+    
     function getEmbedUrl(url) {
         if(!url) return '';
-        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
-        return (match && match[1]) ? "https:" + "//www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
+        
+        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
+        return (match && match[1]) ? "https://www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
     }
 
     function renderPage() {
@@ -495,7 +497,7 @@ body { background: #f4f6f9; color: #333; line-height: 1.6; padding-bottom: 0; }
     window.shareWork = function() {
         let w = currentPopupList[currentPopupIndex];
         let shareUrl = window.location.origin + window.location.pathname + "?work=" + w.Work_ID;
-        let shareText = "👉 " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
+        let shareText = "आमदार साहेब - " + w.Title + "\nसविस्तर माहितीसाठी खालील लिंकवर क्लिक करा:\n";
         
         if (navigator.share) {
             navigator.share({ title: w.Title, text: shareText, url: shareUrl }).catch(err => console.log(err));
