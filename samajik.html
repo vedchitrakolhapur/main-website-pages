@@ -252,10 +252,12 @@
 
     function formatDate(dStr) { return dStr ? dStr.split('T')[0] : ''; }
 
+    
     function getEmbedUrl(url) {
         if(!url) return '';
-        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
-        return (match && match[1]) ? "https:" + "//www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
+        
+        let match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|shorts\/|watch\?v=|watch\?.+&v=))((\w|-){11})/);
+        return (match && match[1]) ? "https://www.youtube.com/embed/" + match[1] + "?autoplay=1&mute=0" : '';
     }
 
     
